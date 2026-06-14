@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placement AutoFill</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../Images/logo.png">
+</head>
+<body>
+  <!-- Authentication View -->
+  <div id="auth-view" class="auth-container">
+    <div class="auth-card">
+      <div class="logo-container">
+        <img src="../Images/logo.png" alt="Placement AutoFill Logo" class="app-logo">
+      </div>
+      
+      <!-- Login Section -->
+      <div id="login-section">
+        <h1 class="app-name">Welcome</h1>
+        <p class="tagline">Sign in to your Placement AutoFill</p>
+        <form id="login-form" class="auth-form">
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required placeholder="john@example.com">
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required placeholder="••••••••">
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Login</button>
+        </form>
+        <p class="auth-switch">Don't have an account? <a href="#" id="go-to-signup">Sign up</a></p>
+      </div>
+
+      <!-- Signup Section -->
+      <div id="signup-section" class="hidden">
+        <h1 class="app-name">Create Account</h1>
+        <p class="tagline">Get started with Placement AutoFill</p>
+        <form id="signup-form" class="auth-form">
+          <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" required placeholder="john@example.com">
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" required placeholder="••••••••">
+          </div>
+          <div class="form-group">
+            <label for="signup-confirm-password">Confirm Password</label>
+            <input type="password" id="signup-confirm-password" required placeholder="••••••••">
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Sign Up</button>
+        </form>
+        <p class="auth-switch">Already have an account? <a href="#" id="go-to-login">Login</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Profile View -->
+  <div id="main-view" class="hidden">
+    <!-- Header Section -->
+    <header class="header">
+      <div class="header-top right-align">
+        <button type="button" id="btn-expand" class="btn-icon" title="Open in Full Tab" style="margin-right: 8px;">⤢ Full Page</button>
+        <button type="button" id="btn-logout" class="btn-icon" title="Logout">Logout</button>
+      </div>
+      <div class="logo-container" style="margin-top:-20px;">
+        <img src="../Images/logo.png" alt="Placement AutoFill Logo" class="app-logo">
+      </div>
+      <h1 class="app-name">Placement AutoFill</h1>
+      <p class="tagline">Fill Once. Apply Everywhere.</p>
+    </header>
+
+    <main class="main-content">
+    <form id="profile-form">
+      <!-- Section 1: Personal Information -->
+      <section class="card">
+        <h2 class="section-title">Personal Information</h2>
+        <div class="form-group">
+          <label for="name">Full Name <span class="required">*</span></label>
+          <input type="text" id="name" name="name" required placeholder="John Doe">
+          <div class="error-msg" id="err-name">Name is required.</div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address <span class="required">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="john.doe@example.com">
+          <div class="error-msg" id="err-email">Valid email is required.</div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number <span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" required placeholder="1234567890" maxlength="10">
+          <div class="error-msg" id="err-phone">Must be exactly 10 digits.</div>
+        </div>
+        <div class="form-group">
+          <label for="city">City / Location</label>
+          <input type="text" id="city" name="city" placeholder="New York">
+        </div>
+      </section>
+
+      <!-- Section 2: Academic Information -->
+      <section class="card">
+        <h2 class="section-title">Academic Information</h2>
+        <div class="form-group">
+          <label for="college">College Name <span class="required">*</span></label>
+          <input type="text" id="college" name="college" required placeholder="University Name">
+          <div class="error-msg" id="err-college">College is required.</div>
+        </div>
+        <div class="form-group">
+          <label for="branch">Branch / Department <span class="required">*</span></label>
+          <select id="branch" name="branch" required>
+            <option value="" disabled selected>Select Branch</option>
+            <option value="CSE">CSE</option>
+            <option value="IT">IT</option>
+            <option value="ECE">ECE</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Civil">Civil</option>
+            <option value="AIML">AIML</option>
+            <option value="Data Science">Data Science</option>
+            <option value="Other">Other</option>
+          </select>
+          <div class="error-msg" id="err-branch">Branch is required.</div>
+        </div>
+        <div class="row">
+          <div class="form-group half">
+            <label for="rollNumber">Roll Number</label>
+            <input type="text" id="rollNumber" name="rollNumber" placeholder="123456">
+          </div>
+          <div class="form-group half">
+            <label for="cgpa">CGPA <span class="required">*</span></label>
+            <input type="number" id="cgpa" name="cgpa" step="0.01" min="0" max="10" required placeholder="8.5">
+            <div class="error-msg" id="err-cgpa">Must be 0-10.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group half">
+            <label for="tenthPercentage">10th %</label>
+            <input type="number" id="tenthPercentage" name="tenthPercentage" step="0.1" min="0" max="100" placeholder="90.5">
+            <div class="error-msg" id="err-tenthPercentage">Must be 0-100.</div>
+          </div>
+          <div class="form-group half">
+            <label for="twelfthPercentage">12th %</label>
+            <input type="number" id="twelfthPercentage" name="twelfthPercentage" step="0.1" min="0" max="100" placeholder="85.0">
+            <div class="error-msg" id="err-twelfthPercentage">Must be 0-100.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="graduationYear">Graduation Year</label>
+          <input type="number" id="graduationYear" name="graduationYear" placeholder="2024">
+        </div>
+      </section>
+
+      <!-- Section 3: Professional Information -->
+      <section class="card">
+        <h2 class="section-title">Professional Information</h2>
+        <div class="form-group">
+          <label for="skills">Skills</label>
+          <textarea id="skills" name="skills" rows="3" placeholder="JavaScript, React, Node.js, Python"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="github">GitHub URL</label>
+          <input type="url" id="github" name="github" placeholder="https://github.com/username">
+        </div>
+        <div class="form-group">
+          <label for="linkedin">LinkedIn URL</label>
+          <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/username">
+        </div>
+        <div class="form-group">
+          <label for="portfolio">Portfolio URL</label>
+          <input type="url" id="portfolio" name="portfolio" placeholder="https://yourportfolio.com">
+        </div>
+        
+        <!-- Dynamic URLs Container -->
+        <div id="urls-container">
+          <!-- Dynamic URL rows will be created here -->
+        </div>
+        <button type="button" id="btn-add-url" class="btn-icon" style="margin-top: 10px;" title="Add Extra URL">+ Add URL</button>
+      </section>
+
+      <!-- Section 3.5: Custom Details (Added dynamically) -->
+      <section class="card">
+        <div class="section-header">
+          <h2 class="section-title">Additional Questions</h2>
+          <button type="button" id="btn-add-question" class="btn-icon" title="Add Custom Question">+ Add</button>
+        </div>
+        <div id="questions-container">
+          <!-- Dynamic Q&A rows will be created here -->
+        </div>
+      </section>
+
+      <!-- Section 4: Resume Manager -->
+      <section class="card">
+        <div class="section-header">
+          <h2 class="section-title">Resume Manager</h2>
+          <button type="button" id="btn-add-resume" class="btn-icon" title="Add Resume">+ Add</button>
+        </div>
+        <div id="resume-container">
+          <!-- Dynamic resume rows will be created here -->
+        </div>
+      </section>
+
+      <!-- Section 5: Actions -->
+      <div class="actions">
+        <button type="button" id="btn-clear" class="btn btn-secondary">Clear Profile</button>
+        <button type="submit" id="btn-save" class="btn btn-primary">Save Profile</button>
+      </div>
+    </form>
+    </main>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
