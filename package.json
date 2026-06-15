@@ -1,0 +1,29 @@
+{
+  "name": "placement-autofill",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shibu09-tech/Autofill-Form-Extension.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shibu09-tech/Autofill-Form-Extension/issues"
+  },
+  "homepage": "https://github.com/Shibu09-tech/Autofill-Form-Extension#readme",
+  "description": "",
+  "dependencies": {
+    "firebase": "^12.14.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "rollup": "^4.62.0"
+  }
+}
