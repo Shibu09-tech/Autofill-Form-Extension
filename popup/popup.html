@@ -95,9 +95,35 @@
           <input type="tel" id="phone" name="phone" required placeholder="1234567890" maxlength="10">
           <div class="error-msg" id="err-phone">Must be exactly 10 digits.</div>
         </div>
+        <div class="row">
+          <div class="form-group half">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob">
+          </div>
+          <div class="form-group half">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+              <option value="" selected>Select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group half">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Mumbai">
+          </div>
+          <div class="form-group half">
+            <label for="state">State</label>
+            <input type="text" id="state" name="state" placeholder="Maharashtra">
+          </div>
+        </div>
         <div class="form-group">
-          <label for="city">City / Location</label>
-          <input type="text" id="city" name="city" placeholder="New York">
+          <label for="nationality">Nationality</label>
+          <input type="text" id="nationality" name="nationality" placeholder="Indian">
         </div>
       </section>
 
@@ -131,26 +157,76 @@
             <input type="text" id="rollNumber" name="rollNumber" placeholder="123456">
           </div>
           <div class="form-group half">
-            <label for="cgpa">CGPA <span class="required">*</span></label>
-            <input type="number" id="cgpa" name="cgpa" step="0.01" min="0" max="10" required placeholder="8.5">
-            <div class="error-msg" id="err-cgpa">Must be 0-10.</div>
+            <label for="registrationNumber">Registration Number</label>
+            <input type="text" id="registrationNumber" name="registrationNumber" placeholder="REG123456">
           </div>
         </div>
         <div class="row">
           <div class="form-group half">
-            <label for="tenthPercentage">10th %</label>
+            <label for="cgpa">CGPA (out of 10) <span class="required">*</span></label>
+            <input type="number" id="cgpa" name="cgpa" step="0.01" min="0" max="10" required placeholder="8.5">
+            <div class="error-msg" id="err-cgpa">Must be 0-10.</div>
+          </div>
+          <div class="form-group half">
+            <label for="percentageEquivalent">Percentage Equivalent</label>
+            <input type="number" id="percentageEquivalent" name="percentageEquivalent" step="0.1" min="0" max="100" placeholder="85.0">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group half">
+            <label for="tenthPercentage">10th Percentage</label>
             <input type="number" id="tenthPercentage" name="tenthPercentage" step="0.1" min="0" max="100" placeholder="90.5">
             <div class="error-msg" id="err-tenthPercentage">Must be 0-100.</div>
           </div>
           <div class="form-group half">
-            <label for="twelfthPercentage">12th %</label>
+            <label for="tenthBoard">10th Board</label>
+            <input type="text" id="tenthBoard" name="tenthBoard" placeholder="CBSE">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group half">
+            <label for="tenthYear">10th Year of Passing</label>
+            <input type="number" id="tenthYear" name="tenthYear" placeholder="2018">
+          </div>
+          <div class="form-group half">
+            <label for="twelfthPercentage">12th Percentage</label>
             <input type="number" id="twelfthPercentage" name="twelfthPercentage" step="0.1" min="0" max="100" placeholder="85.0">
             <div class="error-msg" id="err-twelfthPercentage">Must be 0-100.</div>
           </div>
         </div>
+        <div class="row">
+          <div class="form-group half">
+            <label for="twelfthBoard">12th Board</label>
+            <input type="text" id="twelfthBoard" name="twelfthBoard" placeholder="CBSE">
+          </div>
+          <div class="form-group half">
+            <label for="twelfthYear">12th Year of Passing</label>
+            <input type="number" id="twelfthYear" name="twelfthYear" placeholder="2020">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group half">
+            <label for="graduationYear">Graduation Year</label>
+            <input type="number" id="graduationYear" name="graduationYear" placeholder="2024">
+          </div>
+          <div class="form-group half">
+            <label for="currentYear">Current Year / Semester</label>
+            <input type="text" id="currentYear" name="currentYear" placeholder="4th Year / 7th Sem">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group half">
+            <label for="backlogsCurrent">Backlogs (Current)</label>
+            <input type="number" id="backlogsCurrent" name="backlogsCurrent" min="0" placeholder="0">
+          </div>
+          <div class="form-group half">
+            <label for="backlogsTotal">Backlogs (Total History)</label>
+            <input type="number" id="backlogsTotal" name="backlogsTotal" min="0" placeholder="0">
+          </div>
+        </div>
         <div class="form-group">
-          <label for="graduationYear">Graduation Year</label>
-          <input type="number" id="graduationYear" name="graduationYear" placeholder="2024">
+          <label for="aggregatePercentage">Aggregate Percentage</label>
+          <input type="number" id="aggregatePercentage" name="aggregatePercentage" step="0.1" min="0" max="100" placeholder="82.5">
         </div>
       </section>
 
@@ -173,6 +249,74 @@
           <label for="portfolio">Portfolio URL</label>
           <input type="url" id="portfolio" name="portfolio" placeholder="https://yourportfolio.com">
         </div>
+        <div class="row">
+          <div class="form-group half">
+            <label for="leetcode">LeetCode URL</label>
+            <input type="url" id="leetcode" name="leetcode" placeholder="https://leetcode.com/username">
+          </div>
+          <div class="form-group half">
+            <label for="hackerrank">HackerRank URL</label>
+            <input type="url" id="hackerrank" name="hackerrank" placeholder="https://hackerrank.com/username">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="codeforces">Codeforces URL</label>
+          <input type="url" id="codeforces" name="codeforces" placeholder="https://codeforces.com/profile/username">
+        </div>
+
+        <div class="form-group">
+          <label>Work Experience</label>
+          <select id="hasWorkExperience" name="hasWorkExperience">
+            <option value="no" selected>No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </div>
+        <div id="work-experience-fields" class="hidden">
+          <div class="row">
+            <div class="form-group half">
+              <label for="workCompany">Company</label>
+              <input type="text" id="workCompany" name="workCompany" placeholder="Company name">
+            </div>
+            <div class="form-group half">
+              <label for="workRole">Role</label>
+              <input type="text" id="workRole" name="workRole" placeholder="Software Engineer">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="workDuration">Duration</label>
+            <input type="text" id="workDuration" name="workDuration" placeholder="Jan 2023 - Dec 2023">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Internship Experience</label>
+          <select id="hasInternship" name="hasInternship">
+            <option value="no" selected>No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </div>
+        <div id="internship-fields" class="hidden">
+          <div class="row">
+            <div class="form-group half">
+              <label for="internCompany">Company</label>
+              <input type="text" id="internCompany" name="internCompany" placeholder="Company name">
+            </div>
+            <div class="form-group half">
+              <label for="internRole">Role</label>
+              <input type="text" id="internRole" name="internRole" placeholder="SDE Intern">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="internDuration">Duration</label>
+            <input type="text" id="internDuration" name="internDuration" placeholder="May 2023 - Jul 2023">
+          </div>
+        </div>
+
+        <div class="section-header" style="margin-top:16px;">
+          <h3 class="section-title" style="font-size:1rem;margin:0;border:none;padding:0;">Projects</h3>
+          <button type="button" id="btn-add-project" class="btn-icon" title="Add Project">+ Add</button>
+        </div>
+        <div id="projects-container"></div>
         
         <!-- Dynamic URLs Container -->
         <div id="urls-container">
@@ -181,7 +325,48 @@
         <button type="button" id="btn-add-url" class="btn-icon" style="margin-top: 10px;" title="Add Extra URL">+ Add URL</button>
       </section>
 
-      <!-- Section 3.5: Custom Details (Added dynamically) -->
+      <!-- Section 3.5: Preferences -->
+      <section class="card">
+        <h2 class="section-title">Preferences</h2>
+        <div class="form-group">
+          <label for="preferredRole">Preferred Role</label>
+          <select id="preferredRole" name="preferredRole">
+            <option value="" selected>Select Role</option>
+            <option value="SDE">SDE</option>
+            <option value="Data Analyst">Data Analyst</option>
+            <option value="ML Engineer">ML Engineer</option>
+            <option value="DevOps">DevOps</option>
+            <option value="QA">QA</option>
+            <option value="Product Manager">Product Manager</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="row">
+          <div class="form-group half">
+            <label for="preferredLocation">Preferred Location</label>
+            <input type="text" id="preferredLocation" name="preferredLocation" placeholder="Bangalore or Any">
+          </div>
+          <div class="form-group half">
+            <label for="expectedSalary">Expected Salary (optional)</label>
+            <input type="text" id="expectedSalary" name="expectedSalary" placeholder="8 LPA">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group half">
+            <label for="willingToRelocate">Willing to Relocate</label>
+            <select id="willingToRelocate" name="willingToRelocate">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div class="form-group half">
+            <label for="noticePeriod">Notice Period</label>
+            <input type="text" id="noticePeriod" name="noticePeriod" placeholder="Immediate (Freshers)">
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3.6: Custom Details (Added dynamically) -->
       <section class="card">
         <div class="section-header">
           <h2 class="section-title">Additional Questions</h2>
@@ -215,6 +400,6 @@
   <!-- Toast Notification Container -->
   <div id="toast-container" class="toast-container"></div>
 
-  <script src="popup.js"></script>
+  <script src="../dist/popup.js"></script>
 </body>
 </html>
